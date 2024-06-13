@@ -1,5 +1,12 @@
 <?php
 include 'conn.php';
+session_start();
+
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
 
 $sql = "SELECT * FROM hero";
 $result = $conn->query($sql);
@@ -93,6 +100,7 @@ $result = $conn->query($sql);
                         <a class="nav-link active" id="hero-tab" href="hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
                         <a class="nav-link" id="contact-tab" href="contact.html" role="tab" aria-controls="contact" aria-selected="true">Contact</a>    
                         <a class="nav-link" href="cart.php">Cart</a>
+                        <a class="nav-link" id="logout-tab" href="logout.php" role="tab" aria-controls="contact" aria-selected="true">Logout</a>    
                     </div>
                 </nav>
             </div>
