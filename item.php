@@ -16,7 +16,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Daftar Item</title>
-        <link rel="icon" href="asset/img/icon.png">
+        <link rel="icon" href="img/icon.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <style>
             .btn-group .btn {
@@ -95,8 +95,8 @@
                 <nav>
                     <div class="nav d-block d-lg-flex nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-link active" id="item-tab" href="item.php" role="tab" aria-controls="item" aria-selected="false">Item</a>
-                        <a class="nav-link" id="hero-tab" href="hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
-                        <a class="nav-link" id="contact-tab" href="contact.html" role="tab" aria-controls="contact" aria-selected="true">Contact</a>    
+                        <a class="nav-link" id="hero-tab" href="hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>   
+                        <a class="nav-link" id="creep-tab" href="creep.php" role="tab" aria-controls="creep" aria-selected="true">Creep</a>
                         <a class="nav-link" href="cart.php">Cart</a>
                         <a class="nav-link" id="logout-tab" href="logout.php" role="tab" aria-controls="contact" aria-selected="true">Logout</a>    
                     </div>
