@@ -17,38 +17,91 @@ $result = $conn->query($sql);
         .btn-group .btn {
             border-radius: .25rem   ;
         }
+
+        .navbar {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-tabs {
+            border-bottom: none;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin: 0 10px 0 40px;
+            padding: 1rem 0.5rem;
+            color: #a10900;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: transparent;
+            border-color: transparent;
+            color: #a10900;
+        }
+        .nav-tabs .nav-link.active:after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-tabs .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 4px;
+            background-color: #a10900;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .nav-tabs .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-tabs .nav-link:focus,
+        .nav-tabs .nav-link:hover {
+            color: #a10900;
+        }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand ms-5" href="index.php">Dota 2 Wiki</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto me-5">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="item.php">Item</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="hero.php">Hero</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mechanics</a>
-                </li>
-            </ul>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg py-3 ">
+        <div class="pe-lg-0 ps-lg-5 container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" height="50" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <p style="color: #a10900; font-family: montserrat; font-size: 20px; margin-top: 1%; margin-left: 25%;">Admin Version</p>
+            <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
+                <nav>
+                    <div class="nav d-block d-lg-flex nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link" id="item-tab" href="item.php" role="tab" aria-controls="item" aria-selected="false">Item</a>
+                        <a class="nav-link active" id="hero-tab" href="hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
+                        <a class="nav-link" id="contact-tab" href="contact.html" role="tab" aria-controls="contact" aria-selected="true">Contact</a>    
+                        <a class="nav-link" href="cart.php">Cart</a>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    <!-- End navbar-->
 
 <div class="container my-4">
-    <h2 class="mb-4">Daftar Item</h2>
+    <h2 class="mb-4 text-center">Daftar Hero</h2>
     <div class="d-flex justify-content-end mb-3">
         <a href="hero-add.php" class="btn btn-primary">Tambah Data</a>
     </div>
