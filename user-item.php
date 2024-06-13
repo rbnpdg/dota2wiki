@@ -116,7 +116,7 @@ $result = $conn->query($sql);
                         <a class="nav-link" id="home-tab" href="user-home.php" role="tab" aria-controls="home" aria-selected="false">Home</a>
                         <a class="nav-link active" id="item-tab" href="user-item.php" role="tab" aria-controls="item" aria-selected="false">Item</a>
                         <a class="nav-link" id="hero-tab" href="user-hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
-                        <a class="nav-link" id="contact-tab" href="contact.html" role="tab" aria-controls="contact" aria-selected="true">Contact</a>    
+                        <a class="nav-link" id="creep-tab" href="user-creep.php" role="tab" aria-controls="creep" aria-selected="true">Creep</a>
                         <a class="nav-link" href="cart.php">Cart</a>
                     </div>
                 </nav>
