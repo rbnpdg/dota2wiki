@@ -4,33 +4,48 @@ include 'conn.php';
 if (isset($_GET['id'])) {
     $id_item = $_GET['id'];
 
-    // First, retrieve the file name of the photo associated with the item
-    $sql = "SELECT gambar FROM item WHERE id_item=$id_item";
-    $result = $conn->query($sql);
+    // Pertama, ambil nama file gambar yang terkait dengan item
+    $sql = "SELECT gambar FROM item WHERE id_item = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_item);
+    $stmt->execute();
+    $stmt->bind_result($gambar);
+    $stmt->fetch();
+    $stmt->close();
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $photo_filename = $row['gambar'];
-        
-        // Delete the item from the database
-        $sql_delete = "DELETE FROM item WHERE id_item=$id_item";
-        if ($conn->query($sql_delete) === TRUE) {
+    if ($gambar) {
+        // Hapus item dari database
+        $sql_delete = "DELETE FROM item WHERE id_item = ?";
+        $stmt = $conn->prepare($sql_delete);
+        $stmt->bind_param("i", $id_item);
+
+        if ($stmt->execute()) {
             echo "Data berhasil dihapus";
 
-            // Delete the photo file from the server
+            // Hapus file gambar dari server
             $file_path = 'uploads/' . $gambar;
             if (file_exists($file_path)) {
-                unlink($file_path);
+                if (unlink($file_path)) {
+                    echo " dan file gambar telah dihapus.";
+                } else {
+                    echo " namun file gambar gagal dihapus.";
+                }
+            } else {
+                echo " namun file gambar tidak ditemukan.";
             }
         } else {
-            echo "Error: " . $conn->error;
+            echo "Error: " . $stmt->error;
         }
+
+        $stmt->close();
     } else {
-        echo "Item not found";
+        echo "Item tidak ditemukan atau tidak memiliki gambar.";
     }
 
     $conn->close();
     header("Location: item.php");
     exit();
+} else {
+    echo "Invalid request!";
 }
 ?>
