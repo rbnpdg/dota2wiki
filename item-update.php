@@ -46,13 +46,23 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Item</title>
-    <link rel="icon" href="asset/img/icon.png">
+    <link rel="icon" href="img/icon4.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
+        
+        <style>
+            body {
+                font-family: 'Kaisei Opti', sans-serif; /* Mengatur font-family untuk seluruh teks dalam body */
+            }
+        </style>
 </head>
 <body>
 
 <div class="container my-4">
-    <h2 class="mb-4">Edit Item</h2>
+    <h2 class="mb-4" style="color: #A20800; font-weight: bold;">Edit Item</h2>
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" name="id_item" value="<?php echo $row['id_item']; ?>">
         
@@ -81,7 +91,7 @@ if (isset($_GET['id'])) {
             <input class="form-control" type="file" id="gambar" name="gambar">
         </div>
         <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn-primary me-2">Simpan</button>
+          <button type="submit" class="btn btn-primary me-2" style="font-weight: bold;">Simpan</button>
           <a href="item.php" class="btn btn-danger">Batal</a>
         </div>
     </form>
