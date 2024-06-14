@@ -103,7 +103,7 @@ $result = $conn->query($sql);
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg py-3 ">
         <div class="pe-lg-0 ps-lg-5 container-fluid justify-content-between">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/logo.png" height="50" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -113,11 +113,12 @@ $result = $conn->query($sql);
             <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
                 <nav>
                     <div class="nav d-block d-lg-flex nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-link" id="home-tab" href="user-home.php" role="tab" aria-controls="home" aria-selected="false">Home</a>
+                        <a class="nav-link" id="home-tab" href="index.php" role="tab" aria-controls="home" aria-selected="false">Home</a>
                         <a class="nav-link" id="item-tab" href="user-item.php" role="tab" aria-controls="item" aria-selected="false">Item</a>
                         <a class="nav-link active" id="hero-tab" href="user-hero.php" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
                         <a class="nav-link" id="creep-tab" href="user-creep.php" role="tab" aria-controls="creep" aria-selected="true">Creep</a>
-                        <a class="nav-link" href="cart.php">Cart</a>
+                        <a class="nav-link" id="talents-tab" href="user-talents.php" role="tab" aria-controls="talents" aria-selected="true">Talents</a>
+                        <a class="nav-link" id="mechanics-tab" href="user-mechanics.php" role="tab" aria-controls="mechanics" aria-selected="true">Mechanics</a>
                     </div>
                 </nav>
             </div>
