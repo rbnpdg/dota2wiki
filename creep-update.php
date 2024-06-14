@@ -63,11 +63,21 @@ if (isset($_GET['id'])) {
   <title>Edit Creep</title>
   <link rel="icon" href="asset/img/icon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
+          
+  <style>
+    body {
+      font-family: 'Kaisei Opti', sans-serif; /* Mengatur font-family untuk seluruh teks dalam body */
+    }
+  </style>
 </head>
 <body>
 
 <div class="container my-4">
-  <h2 class="mb-4">Edit Creep</h2>
+  <h2 class="mb-4" style="color: #A20800; font-weight: bold;">Edit Creep</h2>
   <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="nama_creep" class="form-label">Nama Creep</label>
@@ -103,7 +113,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <div class="d-flex justify-content-end">
-      <button type="submit" class="btn btn-primary me-2">Update</button>
+      <button type="submit" class="btn btn-primary me-2" style="font-weight: bold;">Update</button>
       <a href="creep.php" class="btn btn-danger">Batal</a>
     </div>
   </form>
